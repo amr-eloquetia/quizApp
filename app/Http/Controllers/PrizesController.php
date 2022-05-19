@@ -50,13 +50,7 @@ class PrizesController extends Controller
                 $media->save();
             }
         }
-        // $name = $request->file('images')->getClientOriginalName();
-        // $path = $request->file('images')->storeAs('public/prize_images', $name);
-        // $media = Medias::create([
-        //     'path' => "prize_images/$name",
-        //     'prize_id' => $prize->id
-        // ]);
-        // $media->save();
+
 
         $prize->name = $data['name'];
         $prize->price = $data['price'];
