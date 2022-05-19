@@ -78,6 +78,6 @@ class PrizesController extends Controller
 
         $prize->delete();
 
-        return redirect()->route('dashboard.prizes')->with('success', 'Prize deleted');
+        return redirect()->route('admin.prizes')->with('success', 'Prize deleted');
     }
 }

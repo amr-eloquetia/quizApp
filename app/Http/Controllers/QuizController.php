@@ -55,12 +55,10 @@ class QuizController extends Controller
         }elseif($id == '2'){
             if($user->tokens>=200){
                 $prizes =Prizes::where('name', 'Silver Prize')->first();
-                $medias = Medias::where('prize_id', $prizes->id)->get();
-
                 $totalCosts = PrizesWins::where('price',$prizes->price)->sum('price');
                 $user->tokens -= 200;
                 $user->save();
-                return View('silverWheel',compact('my_result','prizes','totalCosts','medias'));
+                return View('silverWheel',compact('my_result','prizes','totalCosts'));
             }
             else{
                 return Redirect::route('buyTokens.get')->with('error', 'You do not have enough tokens');
