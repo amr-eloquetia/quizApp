@@ -68,7 +68,8 @@ class DashboardController extends Controller
     }
     public function createQuestion()
     {
-        return view('admin.createQuestion');
+        $categories = Category::all();
+        return view('admin.createQuestion')->with(compact('categories'));
     }
 
 

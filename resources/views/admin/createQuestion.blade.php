@@ -20,8 +20,15 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group d-flex flex-column ml-4">
-                                    <label for="title">Category Id</label>
+                                    {{-- <label for="title">Category Id</label>
                                     <input type="text" id="product_name" name="category_id" class="p-3" placeholder="">
+                                    --}}
+                                    <label for="cars">Choose a Category</label>
+                                    <select id="cars" name="category_id" style="height:45px">
+                                        @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 @if($errors->has('name'))
                                 <div class="alert alert-danger">{{ $errors->first('name') }}</div>
