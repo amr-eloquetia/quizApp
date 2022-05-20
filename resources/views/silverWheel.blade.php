@@ -37,9 +37,9 @@
     </div>
     <div class="col-md-12 d-flex justify-content-center flex-wrap">
         @foreach ($medias as $media)
-        <div class="col-md-1 justify-content-center">
-            <img style="height: 100px; object-fit: cover;width:100%" src="{{ URL::asset('storage/' .$media->path)}}"
-                alt="" class="img-fluid">
+        <div class="col-md-2 justify-content-center">
+            <img style="min-height: 100px; object-fit: cover;width:100%; max-height:200px"
+                src="{{ URL::asset('storage/' .$media->path)}}" alt="" class="img-fluid">
             <div>
                 <p class="text-center text-light prizeName mt-3" id="prizeName">{{ $media->prize_name }}</p>
             </div>

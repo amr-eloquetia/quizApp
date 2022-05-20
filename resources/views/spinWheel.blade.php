@@ -13,17 +13,6 @@
         background-size: 32px;
         transform: translateY(-50%);
     }
-
-    /* .span1>b,
-    .span2>b,
-    .span3>b,
-    .span4>b,
-    .span5>b,
-    .span6>b,
-    .span7>b,
-    .span8>b {
-        display: none;
-    } */
 </style>
 @section('content')
 <div class="wrapper position-relative" style="min-height: 100vh">
@@ -62,7 +51,18 @@
             <div class="form-group" id="btn-wrapper"></div>
         </form>
     </div>
-    <div id="btns-wrapper"></div>
+    <div class="col-md-12 d-flex justify-content-center flex-wrap">
+        @foreach ($medias as $media)
+        <div class="col-md-2 justify-content-center">
+            <img style="min-height: 100px; object-fit: cover;width:100%; max-height:200px"
+                src="{{ URL::asset('storage/' .$media->path)}}" alt="" class="img-fluid">
+            <div>
+                <p class="text-center text-light prizeName mt-3" id="prizeName">{{ $media->prize_name }}</p>
+            </div>
+        </div>
+        @endforeach
+    </div>
+    <div id="btns-wrapper" class="col-md-12"></div>
 
     <div class="container wheel">
         <div id="mainbox" class="mainbox">
@@ -234,23 +234,6 @@
             document.getElementById("spin-btn").disabled = true;
         }
 
-
-        // function createPrize($prize) {
-        //         var formGroup = document.getElementById('prize-form');
-        //         var form1 =document.getElementById('prizeform');
-        //         var element1 = document.createElement("input");
-        //         element1.id = "prize";
-        //         var buttonWrapper = document.getElementById('btn-wrapper');
-        //         var button1 = document.createElement("button");
-        //         button1.id = "claim";
-        //         const text1 = document.createTextNode("Claim your prize");
-        //         button1.appendChild(text1);
-        //         element1.value=$prize;
-        //         element1.name="prize";
-        //         formGroup.appendChild(element1);
-        //         buttonWrapper.appendChild(button1);
-        //         }
-
         function createPrize($prize) {
                 var formGroup = document.getElementById('prize-form');
                 var form1 =document.getElementById('prizeform');
@@ -274,6 +257,16 @@
 
                 button2.onclick = function(){
                 window.location.reload();
+                }
+
+                const prizeNames = document.getElementsByClassName('prizeName');
+                console.log(prizeNames);
+                console.log($prize);
+                for (var i = 0; i < prizeNames.length; i++) {
+                    if (prizeNames[i].innerHTML === $prize) {
+                        prizeNames[i].classList.add("prizeName-active");
+                        console.log(prizeNames[i]);
+                    }
                 }
 
             }

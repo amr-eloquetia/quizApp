@@ -5,18 +5,17 @@
     <div class="container mt-5" style="min-height: 100vh">
 
         <div class="row py-5">
-            <h1 class="text-white">Take a quick Quiz and win Prizes</h1>
+            <h1 class="text-white text-center">Take a quick Quiz and win Prizes</h1>
         </div>
         <div class="row mb-5">
-            <div class="col-md-6 text-light">
+            <div class="col-md-12 text-light d-flex justify-content-center">
                 <ol>
                     <li class="h3">Chose one of our categories to take the quiz.</li>
                     <li class="h3">Get the wheel you want.</li>
                     <li class="h3">Win prizes for sure!</li>
                 </ol>
             </div>
-            <div class="col-md-6">
-                {{-- <img src="{{ asset('assets/images/bronzewheel.png') }}"> --}}
+            <div class="col-md-12">
                 <div class="wheel" style="height:inherit !important">
                     <div id="mainbox" class="mainbox">
                         <div id="box" class="box">

@@ -36,7 +36,18 @@
             </div>
         </form>
     </div>
-    <div id="btns-wrapper"></div>
+    <div class="col-md-12 d-flex justify-content-center flex-wrap">
+        @foreach ($medias as $media)
+        <div class="col-md-2 justify-content-center">
+            <img style="min-height: 100px; object-fit: cover;width:100%; max-height:200px"
+                src="{{ URL::asset('storage/' .$media->path)}}" alt="" class="img-fluid">
+            <div>
+                <p class="text-center text-light prizeName mt-3" id="prizeName">{{ $media->prize_name }}</p>
+            </div>
+        </div>
+        @endforeach
+    </div>
+    <div id="btns-wrapper" class="col-md-12"></div>
     <div class="container wheel">
         <div id="mainbox" class="mainbox">
             <div id="box" class="box">
@@ -124,20 +135,6 @@
         }
         timeleft -= 1;
         }, 1000);
-        // function createPrize($prize) {
-        //         var formGroup = document.getElementById('prize-form');
-        //         var form1 =document.getElementById('prizeform');
-        //         var element1 = document.createElement("input");
-        //         element1.id = "prize";
-        //         var button1 = document.createElement("button");
-        //         button1.id = "claim";
-        //         const buttonText = document.createTextNode("Claim your prize");
-        //         button1.appendChild(buttonText);
-        //         element1.value=$prize;
-        //         element1.name="prize";
-        //         formGroup.appendChild(element1);
-        //         form1.appendChild(button1);
-        //     }
 
         function createPrize($prize) {
                 var formGroup = document.getElementById('prize-form');
@@ -182,6 +179,16 @@
             document.getElementById("div1").appendChild(newDiv);
             document.getElementById("spin-btn").disabled = true;
             createPrize($prize);
+
+            const prizeNames = document.getElementsByClassName('prizeName');
+            console.log(prizeNames);
+            console.log($prize);
+            for (var i = 0; i < prizeNames.length; i++) {
+                if (prizeNames[i].innerHTML === $prize) {
+                    prizeNames[i].classList.add("prizeName-active");
+                    console.log(prizeNames[i]);
+                }
+            }
         }
 
     </script>

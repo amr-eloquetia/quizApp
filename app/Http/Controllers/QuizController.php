@@ -40,11 +40,11 @@ class QuizController extends Controller
 
         if($id == '1'){
             if($user->tokens>=100){
-            $prizes =Prizes::where('name', 'Bronze Prize')->first();
+            $prizes =Prizes::where('id', '1')->first();
             $medias = Medias::where('prize_id', $prizes->id)->get();
 
             $totalCosts = PrizesWins::where('price',$prizes->price)->sum('price');
-                $user->tokens -= 100;
+                $user->tokens -= $prizes->price;
                 $user->save();
                 return View('bronzeWheel',compact('my_result','prizes','totalCosts','medias'));
             }
@@ -54,33 +54,39 @@ class QuizController extends Controller
 
         }elseif($id == '2'){
             if($user->tokens>=200){
-                $prizes =Prizes::where('name', 'Silver Prize')->first();
+                $prizes =Prizes::where('id', '2')->first();
+                $medias = Medias::where('prize_id', $prizes->id)->get();
+
                 $totalCosts = PrizesWins::where('price',$prizes->price)->sum('price');
-                $user->tokens -= 200;
+                $user->tokens -= $prizes->price;
                 $user->save();
-                return View('silverWheel',compact('my_result','prizes','totalCosts'));
+                return View('silverWheel',compact('my_result','prizes','totalCosts','medias'));
             }
             else{
                 return Redirect::route('buyTokens.get')->with('error', 'You do not have enough tokens');
             }
         }elseif($id == '3'){
             if($user->tokens>=300){
-                $prizes =Prizes::where('name', 'Golden Prize')->first();
+                $prizes =Prizes::where('id', '3')->first();
+                $medias = Medias::where('prize_id', $prizes->id)->get();
+
                 $totalCosts = PrizesWins::where('price',$prizes->price)->sum('price');
-                $user->tokens -= 300;
+                $user->tokens -= $prizes->price;
                 $user->save();
-                return View('goldenWheel',compact('my_result','prizes','totalCosts'));
+                return View('goldenWheel',compact('my_result','prizes','totalCosts','medias'));
             }
             else{
                 return Redirect::route('buyTokens.get')->with('error', 'You do not have enough tokens');
             }
         }else{
             if($user->tokens>=500){
-                $prizes =Prizes::where('name', 'Wheel1 Prize')->first();
+                $prizes =Prizes::where('id', '4')->first();
+                $medias = Medias::where('prize_id', $prizes->id)->get();
+
                 $totalCosts = PrizesWins::where('price',$prizes->price)->sum('price');
-                $user->tokens -= 500;
+                $user->tokens -= $prizes->price;
                 $user->save();
-                return View('spinWheel',compact('my_result','prizes','totalCosts','user'));
+                return View('spinWheel',compact('my_result','prizes','totalCosts','user','medias'));
             }
             else{
                 return Redirect::route('buyTokens.get')->with('error', 'You do not have enough tokens');

@@ -353,17 +353,17 @@ span b {
 
 #claim {
     color: #fff;
-    background-color: #189807;
+    background-color: #6913b0;
     border: none;
-    padding: 10px 20px;
+    padding: 5px 20px;
     border-radius: 5px;
-    margin: 0 5px;
+    margin: 0 10px;
 }
 #claim-replay {
     color: #fff;
-    background-color: #189807;
+    background-color: #178e07;
     border: none;
-    padding: 10px 20px;
+    padding:20px;
     border-radius: 5px;
     margin: 0 10px;
 
@@ -372,21 +372,6 @@ span b {
     display: flex;
     justify-content: center;
     margin: 20px 0;
-}
-#try-again {
-    color: #fff;
-    background-color: #c33e20;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 0 5px;
-    width: 120px;
-}
-#prize-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
 }
 
 #prizeform {
@@ -401,6 +386,14 @@ span b {
     font-size: 24px;
     color: #fff;
     font-weight: bold;
+}
+
+.prizeName-active{
+    background-color: #9507f6;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #9507f6;
 }
 @media screen and (max-width: 520px) {
     span>p {
