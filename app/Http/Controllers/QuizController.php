@@ -39,7 +39,8 @@ class QuizController extends Controller
         $my_result = Results::where('user_id', $user->id)->latest()->first();
 
         if($id == '1'){
-            if($user->tokens>=100){
+            $prizes =Prizes::where('id', '1')->first();
+            if($user->tokens>=$prizes->price){
             $prizes =Prizes::where('id', '1')->first();
             $medias = Medias::where('prize_id', $prizes->id)->get();
 
@@ -53,7 +54,8 @@ class QuizController extends Controller
             }
 
         }elseif($id == '2'){
-            if($user->tokens>=200){
+            $prizes =Prizes::where('id', '2')->first();
+            if($user->tokens>=$prizes->price){
                 $prizes =Prizes::where('id', '2')->first();
                 $medias = Medias::where('prize_id', $prizes->id)->get();
 
@@ -66,8 +68,8 @@ class QuizController extends Controller
                 return Redirect::route('buyTokens.get')->with('error', 'You do not have enough tokens');
             }
         }elseif($id == '3'){
-            if($user->tokens>=300){
-                $prizes =Prizes::where('id', '3')->first();
+            $prizes =Prizes::where('id', '3')->first();
+            if($user->tokens>=$prizes->price){
                 $medias = Medias::where('prize_id', $prizes->id)->get();
 
                 $totalCosts = PrizesWins::where('price',$prizes->price)->sum('price');
@@ -79,8 +81,8 @@ class QuizController extends Controller
                 return Redirect::route('buyTokens.get')->with('error', 'You do not have enough tokens');
             }
         }else{
-            if($user->tokens>=500){
-                $prizes =Prizes::where('id', '4')->first();
+            $prizes =Prizes::where('id', '4')->first();
+            if($user->tokens>=$prizes->price){
                 $medias = Medias::where('prize_id', $prizes->id)->get();
 
                 $totalCosts = PrizesWins::where('price',$prizes->price)->sum('price');

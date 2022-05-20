@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PagesController;
@@ -53,22 +54,35 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
     Route::get('/', function () {
         return redirect('/admin/dashboard');
     });
+    //main admin pages
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/dashboard/users', [DashboardController::class, 'users'])->name('admin.users');
     Route::get('/dashboard/prizes', [DashboardController::class, 'prizes'])->name('admin.prizes');
-    Route::post('/dashboard/deleteUser/{id}', [UserController::class, 'destroy'])->name('delete.user');
-    Route::get('/dashboard/editusers/{id}', [DashboardController::class, 'edituser'])->name('edit.user');
-    Route::put('/dashboard/editusers/{id}', [UserController::class, 'edit'])->name('admin.editUser');
-    Route::get('/dashboard/editprize/{id}', [DashboardController::class, 'editPrize'])->name('edit.prize');
-    Route::put('/dashboard/editPrize/{id}', [PrizesController::class, 'edit'])->name('admin.editPrize');
-    Route::post('/dashboard/deletePrize/{id}', [PrizesController::class, 'destroy'])->name('delete.prize');
+    Route::get('/dashboard/categories', [DashboardController::class, 'categories'])->name('admin.categories');
     Route::get('/dashboard/prizesWon', [DashboardController::class, 'prizesWon'])->name('admin.prizesWon');
     Route::get('/dashboard/quizQuestions', [DashboardController::class, 'quizQuestions'])->name('admin.quizQuestions');
+
+    // get edit and creat pages
+    Route::get('/dashboard/editusers/{id}', [DashboardController::class, 'edituser'])->name('edit.user');
+    Route::get('/dashboard/editprize/{id}', [DashboardController::class, 'editPrize'])->name('edit.prize');
     Route::get('/dashboard/quizQuestions/{id}', [DashboardController::class, 'editQuizQuestion'])->name('admin.editQuizQuestion');
+    Route::get('/dashboard/createQuestion', [DashboardController::class, 'createQuestion'])->name('admin.createQuestion');
+    Route::get('/dashboard/categorie/{id}', [DashboardController::class, 'editCategory'])->name('admin.editCategory');
+    Route::get('/dashboard/createCategory', [DashboardController::class, 'createCategory'])->name('admin.createCategory');
+
+    // post routes
+
+    Route::post('/dashboard/deleteUser/{id}', [UserController::class, 'destroy'])->name('delete.user');
+    Route::put('/dashboard/editusers/{id}', [UserController::class, 'edit'])->name('admin.editUser');
+    Route::put('/dashboard/editPrize/{id}', [PrizesController::class, 'edit'])->name('admin.editPrize');
+    Route::post('/dashboard/deletePrize/{id}', [PrizesController::class, 'destroy'])->name('delete.prize');
     Route::put('/dashboard/quizQuestions/{id}', [QuestionsController::class, 'edit'])->name('editQuizQuestion');
     Route::post('/dashboard/deleteQuizQuestion/{id}', [QuestionsController::class, 'destroy'])->name('delete.quizQuestion');
-    Route::get('/dashboard/createQuestion', [DashboardController::class, 'createQuestion'])->name('admin.createQuestion');
     Route::post('/dashboard/createQuestion', [QuestionsController::class, 'create'])->name('createQuestion.post');
+    Route::post('/dashboard/categories', [CategoriesController::class, 'create'])->name('createCategory.post');
+    Route::put('/dashboard/category/{id}', [CategoriesController::class, 'edit'])->name('admin.editCategory');
+    Route::post('/dashboard/category/{id}', [CategoriesController::class, 'destroy'])->name('delete.category');
+
 });
 
 Route::group(['middleware' => ['auth']], function() {

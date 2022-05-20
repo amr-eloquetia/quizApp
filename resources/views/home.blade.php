@@ -86,17 +86,17 @@
                 </div>
             </div>
         </div>
-        @php
+        {{-- @php
         $wheels = ['BRONZE', 'SILVER', 'GOLDEN', 'SPINNIG'];
-        @endphp
+        @endphp --}}
         <div class="row">
             @foreach ($categories as $key => $category)
 
             <div class="col-md-4">
 
-                <div class="col-md-12">
+                {{-- <div class="col-md-12">
                     <p class="text-light text-center">{{ $wheels[$key] }}</p>
-                </div>
+                </div> --}}
                 <div class="card m-3 hover-shadow categories">
                     <a class="text-white py-2" href="{{ route('quiz',['id'=> $category->id]) }}">
                         <h3 class="text-center d-flex flex-column justify-content-center align-items-center ">

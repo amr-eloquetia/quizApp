@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Prizes;
 use App\Models\PrizesWins;
 use App\Models\Quiz_questions;
@@ -29,6 +30,20 @@ class DashboardController extends Controller
     {
         $prizes = Prizes::all();
         return view('admin.prizes')->with(compact('prizes'));
+    }
+    public function categories()
+    {
+        $categories = Category::all();
+        return view('admin.categories')->with(compact('categories'));
+    }
+    public function editCategory($id)
+    {
+        $category = Category::find($id);
+        return view('admin.editCategory')->with(compact('category'));
+    }
+    public function createCategory()
+    {
+        return view('admin.createCategory');
     }
 
     public function editPrize($id)

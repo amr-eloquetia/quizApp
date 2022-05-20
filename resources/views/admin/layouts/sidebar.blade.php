@@ -63,6 +63,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('admin.categories')}}"
+                        class="nav-link {{(request()->segment(2) == 'dashboard' ? 'active' : '')}}">
+                        <i class="nav-icon fas fa-solid fa-circle-question"></i>
+                        <p>
+                            Categories
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{route('admin.quizQuestions')}}"
                         class="nav-link {{(request()->segment(2) == 'dashboard' ? 'active' : '')}}">
                         <i class="nav-icon fas fa-solid fa-circle-question"></i>
