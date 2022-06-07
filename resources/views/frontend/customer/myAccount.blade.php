@@ -40,6 +40,7 @@
                 <div>
                     <h4 class="text-center">My winnings</h4>
                 </div>
+                <p>Total Tokens Spent : {{ Auth::user()->tokens_spent }}</p>
                 @if (count($my_winnings) > 0)
                 <ul>
                     @foreach ($my_winnings as $my_winning)

@@ -46,6 +46,7 @@ class QuizController extends Controller
 
             $totalCosts = PrizesWins::where('price',$prizes->price)->sum('price');
                 $user->tokens -= $prizes->price;
+                $user->tokens_spent += $prizes->price;
                 $user->save();
                 return View('bronzeWheel',compact('my_result','prizes','totalCosts','medias'));
             }
@@ -61,6 +62,7 @@ class QuizController extends Controller
 
                 $totalCosts = PrizesWins::where('price',$prizes->price)->sum('price');
                 $user->tokens -= $prizes->price;
+                $user->tokens_spent += $prizes->price;
                 $user->save();
                 return View('silverWheel',compact('my_result','prizes','totalCosts','medias'));
             }
@@ -74,6 +76,7 @@ class QuizController extends Controller
 
                 $totalCosts = PrizesWins::where('price',$prizes->price)->sum('price');
                 $user->tokens -= $prizes->price;
+                $user->tokens_spent += $prizes->price;
                 $user->save();
                 return View('goldenWheel',compact('my_result','prizes','totalCosts','medias'));
             }
@@ -87,6 +90,7 @@ class QuizController extends Controller
 
                 $totalCosts = PrizesWins::where('price',$prizes->price)->sum('price');
                 $user->tokens -= $prizes->price;
+                $user->tokens_spent += $prizes->price;
                 $user->save();
                 return View('spinWheel',compact('my_result','prizes','totalCosts','user','medias'));
             }
