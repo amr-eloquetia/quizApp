@@ -36,7 +36,7 @@
 
         </form>
     </div>
-    <div class="col-md-12 d-flex justify-content-center flex-wrap">
+    {{-- <div class="col-md-12 d-flex justify-content-center flex-wrap">
         @foreach ($medias as $media)
         <div class="col-md-2 justify-content-center">
             <img style="min-height: 100px; object-fit: cover;width:100%; max-height:200px"
@@ -46,67 +46,67 @@
             </div>
         </div>
         @endforeach
-    </div>
+    </div> --}}
     <div id="btns-wrapper" class="col-md-12"></div>
     <div class="container wheel">
         <div id="mainbox" class="mainbox">
             <div id="box" class="box">
                 <div class="box1">
                     <span class="span1">
-                        <p>{{ $prizes->prize1 }}</p><b id="1"></b>
+                        <p>{{ $prizes->prize1 }} Credits</p><b id="1"></b>
                     </span>
                     <span class="span2">
-                        <p>{{ $prizes->prize2 }}</p><b id="2"></b>
+                        <p>{{ $prizes->prize2 }} Credits</p><b id="2"></b>
                     </span>
                     <span class="span3">
-                        <p>{{ $prizes->prize3 }}</p><b id="3"></b>
+                        <p>{{ $prizes->prize3 }} Credits</p><b id="3"></b>
                     </span>
                     <span class="span4">
-                        <p>{{ $prizes->prize4 }}</p><b id="4"></b>
+                        <p>{{ $prizes->prize4 }} Credits</p><b id="4"></b>
                     </span>
                 </div>
                 <div class="box2">
                     <span class="span5">
-                        <p>{{ $prizes->prize5 }}</p><b id="5"></b>
+                        <p>{{ $prizes->prize5 }} Credits</p><b id="5"></b>
                     </span>
                     <span class="span6">
-                        <p>{{ $prizes->prize6 }}</p><b id="6"></b>
+                        <p>{{ $prizes->prize6 }} Credits</p><b id="6"></b>
                     </span>
                     <span class="span7">
-                        <p>{{ $prizes->prize7 }}</p><b id="7"></b>
+                        <p>{{ $prizes->prize7 }} Credits</p><b id="7"></b>
                     </span>
                     <span class="span8">
-                        <p>{{ $prizes->prize8 }}</p><b id="8"></b>
+                        <p>{{ $prizes->prize8 }} Credits</p><b id="8"></b>
                     </span>
                 </div>
 
 
                 <div class="box3">
                     <span class="span1">
-                        <p>{{ $prizes->prize1 }}</p><b id="9"></b>
+                        <p>{{ $prizes->prize1 }} Credits</p><b id="9"></b>
                     </span>
                     <span class="span2">
-                        <p>{{ $prizes->prize2 }}</p><b id="10"></b>
+                        <p>{{ $prizes->prize2 }} Credits</p><b id="10"></b>
                     </span>
                     <span class="span3">
-                        <p>{{ $prizes->prize3 }}</p><b id="11"></b>
+                        <p>{{ $prizes->prize3 }} Credits</p><b id="11"></b>
                     </span>
                     <span class="span4">
-                        <p>{{ $prizes->prize4 }}</p><b id="12"></b>
+                        <p>{{ $prizes->prize4 }} Credits</p><b id="12"></b>
                     </span>
                 </div>
                 <div class="box4">
                     <span class="span5">
-                        <p>{{ $prizes->prize5 }}</p><b id="13"></b>
+                        <p>{{ $prizes->prize5 }} Credits</p><b id="13"></b>
                     </span>
                     <span class="span6">
-                        <p>{{ $prizes->prize6 }}</p><b id="14"></b>
+                        <p>{{ $prizes->prize6 }} Credits</p><b id="14"></b>
                     </span>
                     <span class="span7">
-                        <p>{{ $prizes->prize7 }}</p><b id="15"></b>
+                        <p>{{ $prizes->prize7 }} Credits</p><b id="15"></b>
                     </span>
                     <span class="span8">
-                        <p>{{ $prizes->prize8 }}</p><b id="16"></b>
+                        <p>{{ $prizes->prize8 }} Credits</p><b id="16"></b>
                     </span>
                 </div>
 
@@ -138,13 +138,11 @@
         timeleft -= 1;
         }, 1000);
         function createPrize($prize) {
-
-                var medias = '{{ $medias }}';
-
                 var formGroup = document.getElementById('prize-form');
                 var form1 =document.getElementById('prizeform');
                 var element1 = document.createElement("input");
                 element1.id = "prize";
+                element1.setAttribute("type", "hidden");
                 var btnsWrapper = document.getElementById('btns-wrapper');
                 var button1 = document.createElement("button");
                 var button2 = document.createElement("button");
@@ -164,7 +162,6 @@
                 button2.onclick = function(){
                 window.location.reload();
                 }
-
             }
 
         function stop(){
@@ -177,23 +174,13 @@
             console.log(choosenOne);
             setInterval((() =>document.getElementById(choosenOne.id).style.backgroundColor = "rgb(255, 255, 0)"), 10);
             setInterval((() =>document.getElementById(choosenOne.id).style.backgroundColor = "rgb(77, 74, 74)"), 15);
-            $prize = document.getElementById(choosenOne.id).previousSibling.innerHTML;
+            $prize = document.getElementById(choosenOne.id).previousSibling.innerHTML.substring(0,3);
             const newDiv = document.createElement("div");
-            const newContent = document.createTextNode("Congratulations you won a ");
+            const newContent = document.createTextNode("Congratulations you won: " + $prize + " Credits");
             newDiv.appendChild(newContent);
             document.getElementById("div1").appendChild(newDiv);
             document.getElementById("spin-btn").disabled = true;
             createPrize($prize);
-
-            const prizeNames = document.getElementsByClassName('prizeName');
-            console.log(prizeNames);
-            console.log($prize);
-            for (var i = 0; i < prizeNames.length; i++) {
-                if (prizeNames[i].innerHTML === $prize) {
-                    prizeNames[i].classList.add("prizeName-active");
-                    console.log(prizeNames[i]);
-                }
-            }
         }
 
 

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Medias;
 use App\Models\PrizesWins;
+use App\Models\Product;
 use App\Models\Quiz_questions;
 use App\Models\Results;
 use Illuminate\Http\Request;
@@ -67,6 +69,12 @@ class PagesController extends Controller
     public function buyTokens()
     {
         return view('frontend.customer.buyTokens');
+    }
+    public function shop()
+    {
+        $medias = Medias::all();
+        $products = Product::all();
+        return view('shop' , compact('products', 'medias'));
     }
 
 

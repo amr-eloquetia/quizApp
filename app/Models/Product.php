@@ -5,15 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Medias extends Model
+class Product extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'product_id',
-        'path'
+        'title',
+        'description',
+        'price',
     ];
 
-    public function products () {
-        return $this->hasOne('App\Models\Product', 'id', 'product_id');
+    public function medias () {
+        return $this->hasMany('\App\Models\Media', 'product_id', 'id');
     }
 }

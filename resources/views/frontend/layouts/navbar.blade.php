@@ -24,7 +24,7 @@
                             <a class="nav-link nav-btn" href="">Contact</a>
                         </li>
                         <li class="nav-item nav-li">
-                            <a class="nav-link nav-btn" href="">FAQ</a>
+                            <a class="nav-link nav-btn" href="{{ route('shop') }}">Shop</a>
                         </li>
                         <li class="nav-item nav-li">
                             <a class="nav-link nav-btn" href="">Privacy</a>
@@ -39,6 +39,9 @@
                                 href="{{ route('buyTokens.get') }}" style="d-flex">Tokens:<b
                                     style="color:#38ab0e">&nbsp;{{
                                     Auth::user()->tokens }}</b></a></li>
+                        <li class="nav-item" style="margin-left:1.5rem"><a class="nav-link" href=""
+                                style="d-flex">Credits:<b style="color:#38ab0e">&nbsp;{{
+                                    Auth::user()->credits }}</b></a></li>
                         <li class="nav-item" style="margin-left:1.5rem">
                             <a class="nav-link" href="{{ route('myAccount') }}" class="user__btn">My Account</a>
                         </li>

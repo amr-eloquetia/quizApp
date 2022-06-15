@@ -17,14 +17,14 @@ class CreatePrizesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('price');
-            $table->string('prize1');
-            $table->string('prize2');
-            $table->string('prize3');
-            $table->string('prize4');
-            $table->string('prize5');
-            $table->string('prize6');
-            $table->string('prize7');
-            $table->string('prize8');
+            $table->integer('prize1');
+            $table->integer('prize2');
+            $table->integer('prize3');
+            $table->integer('prize4');
+            $table->integer('prize5');
+            $table->integer('prize6');
+            $table->integer('prize7');
+            $table->integer('prize8');
             $table->timestamps();
         });
     }

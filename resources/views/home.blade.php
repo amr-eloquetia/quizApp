@@ -117,6 +117,5 @@
             document.getElementById(randomId).style.backgroundColor = "rgb(255, 255, 0)";
             var interval2 = setInterval((() => document.getElementById(randomId).style.backgroundColor = "rgb(77, 74, 74)"), 1000);
             intervalClear2 = setInterval((() => clearInterval(interval2)), 1000);
-            console.log(randomId);
         }), 1000);
     </script>

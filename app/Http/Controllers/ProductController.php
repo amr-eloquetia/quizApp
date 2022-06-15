@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Models\PrizesWins;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
-class PrizesWonController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,24 +24,27 @@ class PrizesWonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
+        //
+    }
+        /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function buyProduct(Request $request, $id)
+    {
+        $product = Product::find($id);
         $user = Auth::user();
-        $data = $request->input();
+        if($user->credits >= $product->price){
+            $user->credits -= $product->price;
+            $user->save();
+        } else{
+            return Redirect::back()->with('error', 'You do not have enough credits to buy this product');
+        }
 
-
-                $prize = new PrizesWins();
-                $prize->user_id = $user->id;
-                $prize->username = $user->name;
-                $prize->prize = $data['prize'];
-                $prize->price = $data['price'];
-                $prize->save();
-
-                $user->credits += $data['prize'];
-                $user->save();
-                $my_winnings = PrizesWins::where('user_id', Auth::user()->id)->get();
-
-                return view('frontend.customer.myAccount', compact('my_winnings'));
+        return redirect()->route('myAccount');
 
     }
 

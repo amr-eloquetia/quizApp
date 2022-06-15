@@ -41,13 +41,13 @@ class QuizController extends Controller
         $prizes =Prizes::where('id', '1')->first();
         if($user->tokens>=$prizes->price){
         $prizes =Prizes::where('id', '1')->first();
-        $medias = Medias::where('prize_id', $prizes->id)->get();
+        // $medias = Medias::where('prize_id', $prizes->id)->get();
 
         $totalCosts = PrizesWins::where('price',$prizes->price)->sum('price');
             $user->tokens -= $prizes->price;
             $user->tokens_spent += $prizes->price;
             $user->save();
-            return View('bronzeWheel',compact('my_result','prizes','totalCosts','medias'));
+            return View('bronzeWheel',compact('my_result','prizes','totalCosts'));
         }
 
         // if($id == '1'){

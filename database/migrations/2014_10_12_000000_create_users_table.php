@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('address')->unique();
             $table->integer('tokens')->default(0);
             $table->integer('tokens_spent')->default(0);
+            $table->integer('credits')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->boolean('is_admin')->nullable();
             $table->string('password');
