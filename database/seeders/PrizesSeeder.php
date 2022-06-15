@@ -17,14 +17,14 @@ class PrizesSeeder extends Seeder
         DB::table('prizes')->insert([
             'name' => "Bronze Prize",
             "price" => "100",
-            'prize1' => 'Bronze Prize',
-            'prize2' => 'Bronze Prize',
-            'prize3' => 'Bronze Prize',
-            'prize4' => 'Bronze Prize',
-            'prize5' => 'Bronze Prize',
-            'prize6' => 'Bronze Prize',
-            'prize7' => 'Bronze Prize',
-            'prize8' => 'Bronze Prize',
+            'prize1' => '10 LEI',
+            'prize2' => '20 LEI',
+            'prize3' => '30 LEI',
+            'prize4' => '50 LEI',
+            'prize5' => '100 LEI',
+            'prize6' => '200 LEI',
+            'prize7' => '300 LEI',
+            'prize8' => '500 LEI',
         ]);
         DB::table('prizes')->insert([
             'name' => "Silver Prize",
