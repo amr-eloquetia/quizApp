@@ -1,4 +1,4 @@
-@extends('Frontend.layouts.master')
+@extends('frontend.layouts.master')
 
 @section('content')
 <div class="wrapper">
@@ -36,7 +36,7 @@
                     <p class="">{{Auth::user()->phone}}</p>
                 </li>
             </ul>
-            <div>
+            {{-- <div>
                 <div>
                     <h4 class="text-center">My winnings</h4>
                 </div>
@@ -54,7 +54,7 @@
                 <p>You can see the prizes you won here!</p>
                 @endif
 
-            </div>
+            </div> --}}
 
 
             <div class="d-flex align-center justify-content-center">

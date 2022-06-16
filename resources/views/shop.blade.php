@@ -1,4 +1,4 @@
-@extends('Frontend.layouts.master')
+@extends('frontend.layouts.master')
 
 @section('content')
 <div class="wrapper position-relative">
@@ -20,6 +20,14 @@
         <div class="row d-flex justify-content-center">
             <div class="alert alert-danger col-md-4">
                 {{ session('error') }}
+            </div>
+        </div>
+
+        @endif
+        @if (session('success'))
+        <div class="row d-flex justify-content-center">
+            <div class="alert alert-success col-md-4">
+                {{ session('success') }}
             </div>
         </div>
 

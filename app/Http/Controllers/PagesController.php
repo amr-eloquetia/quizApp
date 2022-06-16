@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Inventory;
 use App\Models\Medias;
 use App\Models\PrizesWins;
 use App\Models\Product;
@@ -76,6 +77,15 @@ class PagesController extends Controller
         $products = Product::all();
         return view('shop' , compact('products', 'medias'));
     }
+    public function myInventory()
+    {
+        $my_winnings = PrizesWins::where('user_id', Auth::user()->id)->get();
+        $my_products = Inventory::where('user_id', Auth::user()->id)->get();
+        $medias = Medias::all();
+
+        return view('frontend.customer.myInventory' , compact('my_winnings', 'my_products', 'medias'));
+    }
+
 
 
 }

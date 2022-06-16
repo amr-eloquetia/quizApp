@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    @include('Frontend.layouts.header')
+    @include('frontend.layouts.header')
 </head>
 
 <body class="preload">
-    @include('Frontend.layouts.navbar')
+    @include('frontend.layouts.navbar')
 
     <!-- content-area -->
     @yield('content')
     <!-- ends: .content area -->
     @include('frontend.layouts.footer')
-    @include('Frontend.layouts.scripts')
+    @include('frontend.layouts.scripts')
 
 </body>
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InventoriesController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PrizesController;
 use App\Http\Controllers\PrizesWonController;
@@ -99,5 +100,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/spin-wheel',[PagesController::class, 'spinWheel'])->name('spinWheel');
     Route::get('/buy-tokens', [PagesController::class, 'buyTokens'])->name('buyTokens.get');
     Route::post('/buy-tokens', [UserController::class, 'buyTokens'])->name('buyTokens.post');
-    Route::post('/buy-product/{id}', [ProductController::class, 'buyProduct'])->name('buy.product');
+    Route::post('/buy-product/{id}', [InventoriesController::class, 'create'])->name('buy.product');
+    Route::get('/myInventory', [PagesController::class, 'myInventory'])->name('myInventory');
  });

@@ -18,22 +18,51 @@
                                     class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item nav-li">
+                            <a class="nav-link nav-btn" href="{{ route('shop') }}">Shop</a>
+                        </li>
+                        @if (Auth::user())
+
+                        <li class="nav-item" style="margin-left:1.5rem"><a class="nav-link"
+                                href="{{ route('buyTokens.get') }}" style="d-flex">Tokens:<b
+                                    style="color:#38ab0e">&nbsp;{{
+                                    Auth::user()->tokens }}</b></a></li>
+                        <li class="nav-item" style="margin-left:1.5rem"><a class="nav-link" href=""
+                                style="d-flex">Credits:<b style="color:#38ab0e">&nbsp;{{
+                                    Auth::user()->credits }}</b></a></li>
+                        <li class="nav-item" style="margin-left:1.5rem">
+                            <a class="nav-link" href="{{ route('myAccount') }}" class="user__btn">My Account</a>
+                        </li>
+                        <li class="nav-item" style="margin-left:1.5rem">
+                            <a class="nav-link" href="{{ route('myInventory') }}" class="user__btn">My Inventory</a>
+                        </li>
+                        <li class="nav-item" style="margin-left:1.5rem">
+                            <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                        </li>
+
+                        @else
+
+                        <li class="nav-item" style="margin-left:1.5rem">
+                            <a class="nav-link" href="{{ route('loginPage') }}">Sign In</a>
+                        </li>
+                        <li class="nav-item" style="margin-left:1.5rem">
+                            <a class="nav-link" href="{{ route('registerPage') }}">Sign Up</a>
+                        </li>
+
+                        @endif
+                        {{-- <li class="nav-item nav-li">
                             <a class="nav-link nav-btn" href="">About</a>
                         </li>
                         <li class="nav-item nav-li">
                             <a class="nav-link nav-btn" href="">Contact</a>
                         </li>
                         <li class="nav-item nav-li">
-                            <a class="nav-link nav-btn" href="{{ route('shop') }}">Shop</a>
-                        </li>
-                        <li class="nav-item nav-li">
                             <a class="nav-link nav-btn" href="">Privacy</a>
                         </li>
                         <li class="nav-item nav-li">
                             <a class="nav-link nav-btn" href="">Terms</a>
-                        </li>
+                        </li> --}}
                     </ul>
-                    @if (Auth::user())
+                    {{-- @if (Auth::user())
                     <ul class="navbar-nav ml-auto justify-content-center" style="width: 100%">
                         <li class="nav-item" style="margin-left:1.5rem"><a class="nav-link"
                                 href="{{ route('buyTokens.get') }}" style="d-flex">Tokens:<b
@@ -44,6 +73,9 @@
                                     Auth::user()->credits }}</b></a></li>
                         <li class="nav-item" style="margin-left:1.5rem">
                             <a class="nav-link" href="{{ route('myAccount') }}" class="user__btn">My Account</a>
+                        </li>
+                        <li class="nav-item" style="margin-left:1.5rem">
+                            <a class="nav-link" href="{{ route('myInventory') }}" class="user__btn">My Inventory</a>
                         </li>
                         <li class="nav-item" style="margin-left:1.5rem">
                             <a class="nav-link" href="{{ route('logout') }}">Logout</a>
@@ -58,7 +90,7 @@
                             <a class="nav-link" href="{{ route('registerPage') }}">Sign Up</a>
                         </li>
                     </ul>
-                    @endif
+                    @endif --}}
                 </div>
             </div>
         </nav>

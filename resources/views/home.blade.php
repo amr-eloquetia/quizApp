@@ -1,4 +1,4 @@
-@extends('Frontend.layouts.master')
+@extends('frontend.layouts.master')
 <link rel="stylesheet" href="{{ URL::asset('assets/css/bronzeWheel.css') }}">
 @section('content')
 <div class="wrapper position-relative">

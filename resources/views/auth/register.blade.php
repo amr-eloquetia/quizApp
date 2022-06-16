@@ -1,4 +1,4 @@
-@extends('Frontend.layouts.master')
+@extends('frontend.layouts.master')
 
 @section('content')
 <div class="container mt-5" style="min-height: 100vh">
