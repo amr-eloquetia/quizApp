@@ -5,11 +5,11 @@
                 <div class="footer-logo">
                     <a class="navbar-brand" href="{{ route('home') }}" style="color: #fff !important">
                         {{-- <img src="{{ asset('assets/images/logo.png') }}" alt=""> --}}
-                        QUIZ WEBSITE
+                        QUIZERRA
                     </a>
                 </div>
                 <div class="footer-logo">
-                    <p>some text</p>
+                    <p>Pay less win more</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -40,7 +40,7 @@
                             city/Country</li>
                         <li class="py-2"><i class="fas fa-phone"></i> <b class="px-2">Phone:</b> +123 456 789</li>
                         <li class="py-2"><i class="fas fa-envelope"></i> <b class="px-2">Email:</b>
-                            <a class="text-light" href="mailto:support@quiz.com">support@quiz.com</a>
+                            <a class="text-light" href="mailto:support@quiz.com">support@quizerra.com</a>
                         </li>
                     </ul>
                 </div>

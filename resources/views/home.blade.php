@@ -11,8 +11,8 @@
             <div class="col-md-12 text-light d-flex justify-content-center">
                 <ol>
                     <li class="h3">Chose one of our categories to take the quiz.</li>
-                    <li class="h3">Get the wheel you want.</li>
-                    <li class="h3">Win prizes for sure!</li>
+                    <li class="h3">Earn credits by wheel.</li>
+                    <li class="h3">Buy any product you want from shop!</li>
                 </ol>
             </div>
             <div class="col-md-12">
@@ -21,60 +21,60 @@
                         <div id="box" class="box">
                             <div class="box1">
                                 <span class="span1">
-                                    <p>Bronze prize</p><b id="1"></b>
+                                    <p>10 Credits</p><b id="1"></b>
                                 </span>
                                 <span class="span2">
-                                    <p>Bronze prize</p><b id="2"></b>
+                                    <p>20 Credits</p><b id="2"></b>
                                 </span>
                                 <span class="span3">
-                                    <p>Bronze prize</p><b id="3"></b>
+                                    <p>30 Credits</p><b id="3"></b>
                                 </span>
                                 <span class="span4">
-                                    <p>Bronze prize</p><b id="4"></b>
+                                    <p>40 Credits</p><b id="4"></b>
                                 </span>
                             </div>
                             <div class="box2">
                                 <span class="span5">
-                                    <p>Bronze prize</p><b id="5"></b>
+                                    <p>50 Credits</p><b id="5"></b>
                                 </span>
                                 <span class="span6">
-                                    <p>Bronze prize</p><b id="6"></b>
+                                    <p>100 Credits</p><b id="6"></b>
                                 </span>
                                 <span class="span7">
-                                    <p>Bronze prize</p><b id="7"></b>
+                                    <p>150 Credits</p><b id="7"></b>
                                 </span>
                                 <span class="span8">
-                                    <p>Bronze prize</p><b id="8"></b>
+                                    <p>200 Credits</p><b id="8"></b>
                                 </span>
                             </div>
 
 
                             <div class="box3">
                                 <span class="span1">
-                                    <p>Bronze prize</p><b id="9"></b>
+                                    <p>10 Credits</p><b id="9"></b>
                                 </span>
                                 <span class="span2">
-                                    <p>Bronze prize</p><b id="10"></b>
+                                    <p>20 Credits</p><b id="10"></b>
                                 </span>
                                 <span class="span3">
-                                    <p>Bronze prize</p><b id="11"></b>
+                                    <p>30 Credits</p><b id="11"></b>
                                 </span>
                                 <span class="span4">
-                                    <p>Bronze prize</p><b id="12"></b>
+                                    <p>40 Credits</p><b id="12"></b>
                                 </span>
                             </div>
                             <div class="box4">
                                 <span class="span5">
-                                    <p>Bronze prize</p><b id="13"></b>
+                                    <p>50 Credits</p><b id="13"></b>
                                 </span>
                                 <span class="span6">
-                                    <p>Bronze prize</p><b id="14"></b>
+                                    <p>100 Credits</p><b id="14"></b>
                                 </span>
                                 <span class="span7">
-                                    <p>Bronze prize</p><b id="15"></b>
+                                    <p>150 Credits</p><b id="15"></b>
                                 </span>
                                 <span class="span8">
-                                    <p>Bronze prize</p><b id="16"></b>
+                                    <p>200 Credits</p><b id="16"></b>
                                 </span>
                             </div>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Inventory;
 use App\Models\Product;
+use App\Models\Tickets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -29,23 +30,26 @@ class InventoriesController extends Controller
     {
         $user = Auth::user();
         $product = Product::find($id);
+        $tickets = Tickets::where('user_id', $user->id)->where('title', $product->category)->first();
 
-        if($user->credits >= $product->price){
-            $user->credits -= $product->price;
-            $user->save();
+
+        if($tickets){
+                $tickets->delete();
+            $my_inventory = New Inventory();
+            $my_inventory->user_id = $user->id;
+            $my_inventory->product_id = $product->id;
+            $my_inventory->product_title = $product->title;
+            $my_inventory->product_price = $product->price;
+            $my_inventory->product_description = $product->description;
+            $my_inventory->save();
+
+            return redirect()->route('shop')->with('success', 'You have successfully purchased this product');
         } else{
-            return Redirect::back()->with('error', 'You do not have enough credits to buy this product');
+            return Redirect::back()->with('error', 'You do not have enough tickets to buy this product');
         }
 
-        $my_inventory = New Inventory();
-        $my_inventory->user_id = $user->id;
-        $my_inventory->product_id = $product->id;
-        $my_inventory->product_title = $product->title;
-        $my_inventory->product_price = $product->price;
-        $my_inventory->product_description = $product->description;
-        $my_inventory->save();
 
-        return redirect()->route('shop')->with('success', 'You have successfully purchased this product');
+
 
     }
 

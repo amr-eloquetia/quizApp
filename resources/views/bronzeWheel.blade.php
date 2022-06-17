@@ -53,60 +53,60 @@
             <div id="box" class="box">
                 <div class="box1">
                     <span class="span1">
-                        <p>{{ $prizes->prize1 }} Credits</p><b id="1"></b>
+                        <p style="display:none">{{ $prizes->prize1 }}</p><b id="1"></b>
                     </span>
                     <span class="span2">
-                        <p>{{ $prizes->prize2 }} Credits</p><b id="2"></b>
+                        <p style="display:none">{{ $prizes->prize2 }}</p><b id="2"></b>
                     </span>
                     <span class="span3">
-                        <p>{{ $prizes->prize3 }} Credits</p><b id="3"></b>
+                        <p style="display:none">{{ $prizes->prize3 }}</p><b id="3"></b>
                     </span>
                     <span class="span4">
-                        <p>{{ $prizes->prize4 }} Credits</p><b id="4"></b>
+                        <p style="display:none">{{ $prizes->prize4 }}</p><b id="4"></b>
                     </span>
                 </div>
                 <div class="box2">
                     <span class="span5">
-                        <p>{{ $prizes->prize5 }} Credits</p><b id="5"></b>
+                        <p style="display:none">{{ $prizes->prize5 }}</p><b id="5"></b>
                     </span>
                     <span class="span6">
-                        <p>{{ $prizes->prize6 }} Credits</p><b id="6"></b>
+                        <p style="display:none">{{ $prizes->prize6 }}</p><b id="6"></b>
                     </span>
                     <span class="span7">
-                        <p>{{ $prizes->prize7 }} Credits</p><b id="7"></b>
+                        <p style="display:none">{{ $prizes->prize7 }}</p><b id="7"></b>
                     </span>
                     <span class="span8">
-                        <p>{{ $prizes->prize8 }} Credits</p><b id="8"></b>
+                        <p style="display:none">{{ $prizes->prize8 }}</p><b id="8"></b>
                     </span>
                 </div>
 
 
                 <div class="box3">
                     <span class="span1">
-                        <p>{{ $prizes->prize1 }} Credits</p><b id="9"></b>
+                        <p style="display:none">{{ $prizes->prize1 }}</p><b id="9"></b>
                     </span>
                     <span class="span2">
-                        <p>{{ $prizes->prize2 }} Credits</p><b id="10"></b>
+                        <p style="display:none">{{ $prizes->prize2 }}</p><b id="10"></b>
                     </span>
                     <span class="span3">
-                        <p>{{ $prizes->prize3 }} Credits</p><b id="11"></b>
+                        <p style="display:none">{{ $prizes->prize3 }}</p><b id="11"></b>
                     </span>
                     <span class="span4">
-                        <p>{{ $prizes->prize4 }} Credits</p><b id="12"></b>
+                        <p style="display:none">{{ $prizes->prize4 }}</p><b id="12"></b>
                     </span>
                 </div>
                 <div class="box4">
                     <span class="span5">
-                        <p>{{ $prizes->prize5 }} Credits</p><b id="13"></b>
+                        <p style="display:none">{{ $prizes->prize5 }}</p><b id="13"></b>
                     </span>
                     <span class="span6">
-                        <p>{{ $prizes->prize6 }} Credits</p><b id="14"></b>
+                        <p style="display:none">{{ $prizes->prize6 }}</p><b id="14"></b>
                     </span>
                     <span class="span7">
-                        <p>{{ $prizes->prize7 }} Credits</p><b id="15"></b>
+                        <p style="display:none">{{ $prizes->prize7 }}</p><b id="15"></b>
                     </span>
                     <span class="span8">
-                        <p>{{ $prizes->prize8 }} Credits</p><b id="16"></b>
+                        <p style="display:none">{{ $prizes->prize8 }}</p><b id="16"></b>
                     </span>
                 </div>
 
@@ -174,9 +174,9 @@
             console.log(choosenOne);
             setInterval((() =>document.getElementById(choosenOne.id).style.backgroundColor = "rgb(255, 255, 0)"), 10);
             setInterval((() =>document.getElementById(choosenOne.id).style.backgroundColor = "rgb(77, 74, 74)"), 15);
-            $prize = document.getElementById(choosenOne.id).previousSibling.innerHTML.substring(0,3);
+            $prize = document.getElementById(choosenOne.id).previousSibling.innerHTML;
             const newDiv = document.createElement("div");
-            const newContent = document.createTextNode("Congratulations you won: " + $prize + " Credits");
+            const newContent = document.createTextNode("Congratulations you won: " + $prize + " ticket");
             newDiv.appendChild(newContent);
             document.getElementById("div1").appendChild(newDiv);
             document.getElementById("spin-btn").disabled = true;

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Medias;
 use App\Models\Prizes;
 use App\Models\PrizesWins;
+use App\Models\Product;
 use App\Models\Quiz_questions;
 use App\Models\User;
 
@@ -70,6 +72,12 @@ class DashboardController extends Controller
     {
         $categories = Category::all();
         return view('admin.createQuestion')->with(compact('categories'));
+    }
+    public function products()
+    {
+        $medias = Medias::all();
+        $products = Product::all();
+        return view('admin.products')->with(compact('products','medias'));
     }
 
 

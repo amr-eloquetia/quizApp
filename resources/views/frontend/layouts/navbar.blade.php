@@ -4,7 +4,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ route('home') }}">
                     {{-- <img src="{{ asset('assets/images/logo.png') }}" alt="image-not-found"> --}}
-                    QUIZ WEBSITE
+                    QUIZERRA
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -22,30 +22,29 @@
                         </li>
                         @if (Auth::user())
 
-                        <li class="nav-item" style="margin-left:1.5rem"><a class="nav-link"
-                                href="{{ route('buyTokens.get') }}" style="d-flex">Tokens:<b
-                                    style="color:#38ab0e">&nbsp;{{
+                        <li class="nav-item nav-li"><a class="nav-link nav-btn" href="{{ route('buyTokens.get') }}"
+                                style="d-flex">Tokens:<b style="color:#38ab0e">&nbsp;{{
                                     Auth::user()->tokens }}</b></a></li>
-                        <li class="nav-item" style="margin-left:1.5rem"><a class="nav-link" href=""
-                                style="d-flex">Credits:<b style="color:#38ab0e">&nbsp;{{
-                                    Auth::user()->credits }}</b></a></li>
-                        <li class="nav-item" style="margin-left:1.5rem">
-                            <a class="nav-link" href="{{ route('myAccount') }}" class="user__btn">My Account</a>
+                        {{-- <li class="nav-item nav-li"><a class="nav-link nav-btn" href="" style="d-flex">Credits:<b
+                                    style="color:#38ab0e">&nbsp;{{
+                                    Auth::user()->credits }}</b></a></li> --}}
+                        <li class="nav-item nav-li">
+                            <a class="nav-link nav-btn" href="{{ route('myAccount') }}">My Account</a>
                         </li>
-                        <li class="nav-item" style="margin-left:1.5rem">
-                            <a class="nav-link" href="{{ route('myInventory') }}" class="user__btn">My Inventory</a>
+                        <li class="nav-item nav-li">
+                            <a class="nav-link nav-btn" href="{{ route('myInventory') }}">My Inventory</a>
                         </li>
-                        <li class="nav-item" style="margin-left:1.5rem">
-                            <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                        <li class="nav-item nav-li">
+                            <a class="nav-link nav-btn" href="{{ route('logout') }}">Logout</a>
                         </li>
 
                         @else
 
-                        <li class="nav-item" style="margin-left:1.5rem">
-                            <a class="nav-link" href="{{ route('loginPage') }}">Sign In</a>
+                        <li class="nav-item nav-li">
+                            <a class="nav-link nav-btn" href="{{ route('loginPage') }}">Sign In</a>
                         </li>
-                        <li class="nav-item" style="margin-left:1.5rem">
-                            <a class="nav-link" href="{{ route('registerPage') }}">Sign Up</a>
+                        <li class="nav-item nav-li">
+                            <a class="nav-link nav-btn" href="{{ route('registerPage') }}">Sign Up</a>
                         </li>
 
                         @endif

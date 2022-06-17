@@ -60,6 +60,44 @@
             </div>
             <div>
                 <div>
+                    <h4 class="text-center">My Avaliable Tickets</h4>
+                </div>
+                @if (count($my_tickets) > 0)
+                <ul>
+                    @foreach ($my_tickets as $my_ticket)
+                    <li class="d-flex">
+                        <p>Blue Ticket : {{ $my_ticket::where('title', 'Blue')->count() }} </p>
+                    </li>
+                    <li class="d-flex">
+                        <p>Purple Ticket : {{ $my_ticket::where('title', 'Purple')->count() }} </p>
+                    </li>
+                    <li class="d-flex">
+                        <p>Pink Ticket : {{ $my_ticket::where('title', 'Pink')->count() }} </p>
+                    </li>
+                    <li class="d-flex">
+                        <p>Green Ticket : {{ $my_ticket::where('title', 'Green')->count() }} </p>
+                    </li>
+                    <li class="d-flex">
+                        <p>Turqoise Ticket : {{ $my_ticket::where('title', 'Turqoise')->count() }} </p>
+                    </li>
+                    <li class="d-flex">
+                        <p>Yellow Ticket : {{ $my_ticket::where('title', 'Yellow')->count() }} </p>
+                    </li>
+                    <li class="d-flex">
+                        <p>Gray Ticket : {{ $my_ticket::where('title', 'Gray')->count() }} </p>
+                    </li>
+                    <li class="d-flex">
+                        <p>Red Ticket : {{ $my_ticket::where('title', 'Red')->count() }} </p>
+                    </li>
+                    @break
+                    @endforeach
+                </ul>
+                @else
+                <p>You can see the prizes you won here!</p>
+                @endif
+            </div>
+            <div>
+                <div>
                     <h4 class="text-center">My winnings</h4>
                 </div>
                 <p>Total Tokens Spent : {{ Auth::user()->tokens_spent }}</p>
@@ -67,7 +105,7 @@
                 <ul>
                     @foreach ($my_winnings as $my_winning)
                     <li class="d-flex">
-                        <p>Prize : {{ $my_winning->prize }}</p>
+                        <p>Prize : {{ $my_winning->title }} Ticket</p>
                         <p class="mx-3">Date : {{ $my_winning->created_at }}</p>
                     </li>
                     @endforeach

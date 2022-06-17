@@ -9,6 +9,7 @@ use App\Models\PrizesWins;
 use App\Models\Product;
 use App\Models\Quiz_questions;
 use App\Models\Results;
+use App\Models\Tickets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -81,9 +82,10 @@ class PagesController extends Controller
     {
         $my_winnings = PrizesWins::where('user_id', Auth::user()->id)->get();
         $my_products = Inventory::where('user_id', Auth::user()->id)->get();
+        $my_tickets = Tickets::where('user_id', Auth::user()->id)->get();
         $medias = Medias::all();
 
-        return view('frontend.customer.myInventory' , compact('my_winnings', 'my_products', 'medias'));
+        return view('frontend.customer.myInventory' , compact('my_winnings', 'my_products', 'medias', 'my_tickets'));
     }
 
 

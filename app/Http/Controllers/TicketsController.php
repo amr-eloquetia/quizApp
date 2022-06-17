@@ -2,16 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Inventory;
-use App\Models\Medias;
-use App\Models\PrizesWins;
-use App\Models\Product;
-use App\Models\Tickets;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 
-class PrizesWonController extends Controller
+class TicketsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,25 +21,9 @@ class PrizesWonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $user = Auth::user();
-        $data = $request->input();
-
-
-                $ticket = new Tickets();
-                $ticket->user_id = $user->id;
-                $ticket->title = $data['prize'];
-                $ticket->price = $data['price'];
-                $ticket->save();
-                $user->save();
-                $my_winnings = Tickets::where('user_id', Auth::user()->id)->get();
-                $my_products = Inventory::where('user_id', Auth::user()->id)->get();
-                $medias = Medias::all();
-                $my_tickets = Tickets::where('user_id', Auth::user()->id)->get();
-
-                return view('frontend.customer.myInventory', compact('my_winnings', 'my_products', 'medias', 'my_tickets'));
-
+        //
     }
 
     /**

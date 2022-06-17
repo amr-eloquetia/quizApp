@@ -73,6 +73,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
     Route::get('/dashboard/createQuestion', [DashboardController::class, 'createQuestion'])->name('admin.createQuestion');
     Route::get('/dashboard/categorie/{id}', [DashboardController::class, 'editCategory'])->name('admin.editCategory');
     Route::get('/dashboard/createCategory', [DashboardController::class, 'createCategory'])->name('admin.createCategory');
+    Route::get('/dashboard/products', [DashboardController::class, 'products'])->name('admin.products');
 
     // post routes
 
