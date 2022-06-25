@@ -1,5 +1,10 @@
 @extends('frontend.layouts.master')
+<style>
+    li>p {
+        padding: 5px;
 
+    }
+</style>
 @section('content')
 <div class="wrapper">
     <div class="col-md-12 mt-lg-0 mt-5 d-flex flex-column align-items-center">
@@ -63,31 +68,39 @@
                     <h4 class="text-center">My Avaliable Tickets</h4>
                 </div>
                 @if (count($my_tickets) > 0)
-                <ul>
+                <ul class="d-flex justify-content-between flex-wrap">
                     @foreach ($my_tickets as $my_ticket)
-                    <li class="d-flex">
-                        <p>Blue Ticket : {{ $my_ticket::where('title', 'Blue')->count() }} </p>
+                    <li class="d-flex ">
+                        <p class="tickets">Blue Ticket : </p>
+                        <p>{{ $my_ticket::where('title', 'Blue')->count() }} </p>
                     </li>
                     <li class="d-flex">
-                        <p>Purple Ticket : {{ $my_ticket::where('title', 'Purple')->count() }} </p>
+                        <p>Purple Ticket : </p>
+                        <p>{{ $my_ticket::where('title', 'Purple')->count() }} </p>
                     </li>
                     <li class="d-flex">
-                        <p>Pink Ticket : {{ $my_ticket::where('title', 'Pink')->count() }} </p>
+                        <p>Pink Ticket : </p>
+                        <p>{{ $my_ticket::where('title', 'Pink')->count() }} </p>
                     </li>
                     <li class="d-flex">
-                        <p>Green Ticket : {{ $my_ticket::where('title', 'Green')->count() }} </p>
+                        <p>Green Ticket : </p>
+                        <p>{{ $my_ticket::where('title', 'Green')->count() }} </p>
                     </li>
                     <li class="d-flex">
-                        <p>Turqoise Ticket : {{ $my_ticket::where('title', 'Turqoise')->count() }} </p>
+                        <p>Turqoise Ticket : </p>
+                        <p>{{ $my_ticket::where('title', 'Turqoise')->count() }} </p>
                     </li>
                     <li class="d-flex">
-                        <p>Yellow Ticket : {{ $my_ticket::where('title', 'Yellow')->count() }} </p>
+                        <p>Yellow Ticket : </p>
+                        <p>{{ $my_ticket::where('title', 'Yellow')->count() }} </p>
                     </li>
                     <li class="d-flex">
-                        <p>Gray Ticket : {{ $my_ticket::where('title', 'Gray')->count() }} </p>
+                        <p>Gray Ticket : </p>
+                        <p>{{ $my_ticket::where('title', 'Gray')->count() }} </p>
                     </li>
                     <li class="d-flex">
-                        <p>Red Ticket : {{ $my_ticket::where('title', 'Red')->count() }} </p>
+                        <p>Red Ticket : </p>
+                        <p>{{ $my_ticket::where('title', 'Red')->count() }} </p>
                     </li>
                     @break
                     @endforeach

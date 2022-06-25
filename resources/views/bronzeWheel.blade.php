@@ -121,10 +121,10 @@
         intervalRandom = setInterval((function changeColor(){
             var randomId = Math.floor(Math.random() * 16) + 1;
             document.getElementById(randomId).style.backgroundColor = "rgb(255, 255, 0)";
-            var interval2 = setInterval((() => document.getElementById(randomId).style.backgroundColor = "rgb(77, 74, 74)"), 500);
-            intervalClear2 = setInterval((() => clearInterval(interval2)), 500);
+            var interval2 = setInterval((() => document.getElementById(randomId).style.backgroundColor = "rgb(77, 74, 74)"), 300);
+            intervalClear2 = setInterval((() => clearInterval(interval2)), 300);
             console.log(randomId);
-        }), 500);
+        }), 300);
 
         var timeleft = 30;
         var downloadTimer = setInterval(function(){
